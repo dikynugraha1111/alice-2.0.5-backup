@@ -91,14 +91,14 @@ class AliceCore {
     _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     final initializationSettingsAndroid =
         AndroidInitializationSettings(notificationIcon);
-    const initializationSettingsIOS = IOSInitializationSettings();
+    // const initializationSettingsIOS = IOSInitializationSettings();
     final initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
+      // iOS: initializationSettingsIOS,
     );
     _flutterLocalNotificationsPlugin.initialize(
       initializationSettings,
-      onSelectNotification: _onSelectedNotification,
+      // onSelectNotification: _onSelectedNotification,
     );
   }
 
@@ -218,11 +218,11 @@ class AliceCore {
       playSound: false,
       largeIcon: DrawableResourceAndroidBitmap(notificationIcon),
     );
-    const iOSPlatformChannelSpecifics =
-        IOSNotificationDetails(presentSound: false);
+    // const iOSPlatformChannelSpecifics =
+    //     IOSNotificationDetails(presentSound: false);
     final platformChannelSpecifics = NotificationDetails(
       android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics,
+      // iOS: iOSPlatformChannelSpecifics,
     );
     final String? message = _notificationMessage;
     await _flutterLocalNotificationsPlugin.show(
